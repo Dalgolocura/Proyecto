@@ -17,7 +17,7 @@ def lectura():
         n = int(datos[0])
         m = int(datos[1])
         p = int(datos[2])
-        gastoEnergia = sys.stdin.readline().replace("\n","").split(" ")
+        gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
         portales = []
 
         for i in range(p):
