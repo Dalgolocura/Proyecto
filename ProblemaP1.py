@@ -17,16 +17,23 @@ def lectura():
         n = int(datos[0])
         m = int(datos[1])
         p = int(datos[2])
-        gastoEnergia = sys.stdin.readline().split(" ")
+        gastoEnergia = sys.stdin.readline().replace("\n","").split(" ")
         portales = []
 
         for i in range(p):
             datos = sys.stdin.readline().split(" ")
             portales.append([(int(datos[0]), int(datos[1])), (int(datos[2]), int(datos[3]))])
 
+
+        print(n,m,p)
+        print(gastoEnergia)
+        print(portales)
+
         nMatriz -= 1
 
 def main():
-    pass
+    lectura()
 
 main()
+
+# comando: python ProblemaP1.py <entrada.in> salida.out
