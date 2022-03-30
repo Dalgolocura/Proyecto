@@ -10,10 +10,11 @@ Autores:
 import sys
 from timeit import default_timer as timer
 from tracemalloc import start
+from queue import PriorityQueue as PQ
 
 def lectura():
 
-    file = open("Proyecto/P1_casesFP.in", "r")
+    file = open("1.in", "r")
 
     nCasos = int(file.readline())
     # nCasos = int(sys.stdin.readline())
@@ -56,17 +57,22 @@ def binarySearch(array, x, low, high):
     return -1
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas):
-    # memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
+    inicio = (0,0)
     memoria = {}
-    memoria[(0,0)] = 0
+    memoria[inicio] = 0
     visitados = []
-    porVisitar = [(0,0)]
+    # porVisitar = [inicio]
 
     j = 0
 
-    while len(porVisitar) > 0:
+    pq = PQ()
+    pq.put((inicio,0))
 
-        actual = porVisitar.pop(0)
+    while not pq.empty():
+        (actual, dist) = pq.get()
+        # print(actual, dist)
+        visitados.append(actual)
+
         vecinos = []
         if actual[1] > 0 and (actual[0], actual[1] - 1) not in visitados:
             vecinos.append((actual[0], actual[1] - 1))
@@ -76,22 +82,23 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
         if index != -1 and portales[actual] not in visitados:
             vecinos.append(portales[actual])
 
-        for i in vecinos:
-            if i[0] > actual[0]:
+        for vecino in vecinos:
+            if vecino[0] > actual[0]:
                 nuevoGasto = memoria[actual]
             else:
-                nuevoGasto = gastoEnergia[i[0]] + memoria[actual]
+                nuevoGasto = gastoEnergia[vecino[0]] + memoria[actual]
 
-            nuevo = i not in memoria.keys()
+            nuevo = vecino not in memoria.keys()
             if nuevo:
-                memoria[i] = nuevoGasto
+                memoria[vecino] = nuevoGasto
             else:
-                viejoGasto = memoria[i]
+                viejoGasto = memoria[vecino]
                 if nuevoGasto < viejoGasto:
-                    memoria[i] = nuevoGasto
-            if i not in visitados and i not in porVisitar:
-                porVisitar.append(i)
-        visitados.append(actual)
+                    pq.put((vecino, nuevoGasto))
+                    memoria[vecino] = nuevoGasto
+            if vecino not in visitados:
+                pq.put((vecino, nuevoGasto))
+                # porVisitar.append(vecino)
 
         j += 1
         if j % 10000 == 0:
@@ -110,5 +117,6 @@ start = timer()
 lectura()
 elapsed_time = timer() - start
 print("Tiempo total: %.10f segundos." % elapsed_time)
+
 
 # comando: python ProblemaP1.py <2.in> salida.out
