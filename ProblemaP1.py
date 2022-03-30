@@ -28,9 +28,8 @@ def lectura():
             datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0]), int(datos[1]))] = (int(datos[2]), int(datos[3]))
             entradas.append((int(datos[0]), int(datos[1])))
-            salidas.append((int(datos[2]), int(datos[3])))
 
-        # print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
+        print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
         # print(nPisos,nHabitaciones,nPortales)
         # print(gastoEnergia)
         # print(portales)
@@ -50,7 +49,6 @@ lectura()
 elapsed_time = timer() - start
 print("Tiempo: %.10f segundos." % elapsed_time)
 
-# def dijkstra():
-#     if (i,j) in portales.keys()
+
 
 # comando: python ProblemaP1.py <2.in> salida.out
