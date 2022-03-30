@@ -40,7 +40,7 @@ def lectura():
         start = timer() # TODO: Quitar esto
         print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
         elapsed_time = timer() - start # TODO: Quitar esto
-        print("Caso: ", nCasos, "Tiempo: ", elapsed_time) # TODO: Quitar esto
+        print("Caso:", 1001 - nCasos, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
 def binarySearch(array, x, low, high):
