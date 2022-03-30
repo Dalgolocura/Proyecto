@@ -7,7 +7,6 @@ Autores:
     William Mendez  - 202012662
 """
 
-from re import M
 import sys
 from timeit import default_timer as timer
 from tracemalloc import start
@@ -31,14 +30,27 @@ def lectura():
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
         entradas = list(portales.keys())
+        entradas.sort()
 
         # portales = {(0,1): (2,0), (0,2): (3,2), (1,0): (3,1), (2,1): (3,0)}
         # entradas = list(portales.keys())
 
-        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas))
+        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
         nMatriz -= 1
 
-def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas):
+def binarySearch(array, x, low, high):
+    high -= 1
+    while low <= high:
+        mid = low + (high - low)//2
+        if array[mid] == x:
+            return mid
+        elif array[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas):
     memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
     memoria[0][0] = 0
     visitados = []
@@ -47,14 +59,17 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, p
     porVisitar.append((0, 0))
 
     while len(porVisitar) > 0:
-        actual = porVisitar.pop(0)
+        actual = porVisitar.pop(-1)
         vecinos = []
         if actual[1] > 0 and (actual[0], actual[1] - 1) not in visitados:
             vecinos.append((actual[0], actual[1] - 1))
         if actual[1] < nHabitaciones - 1 and (actual[0], actual[1] + 1) not in visitados:
             vecinos.append((actual[0], actual[1] + 1))
         # TODO agregar vecino de arriba si existe
-        if actual in entradas and portales[actual] not in visitados:
+
+        index = binarySearch(entradas, actual, 0, len(entradas))
+
+        if index != -1 and portales[actual] not in visitados:
             vecinos.append(portales[actual])
 
         for i in vecinos:
