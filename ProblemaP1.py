@@ -7,42 +7,76 @@ Autores:
     William Mendez  - 202012662
 """
 
+from re import M
 import sys
 from timeit import default_timer as timer
 from tracemalloc import start
 
 def lectura():
     nMatriz = int(sys.stdin.readline())
+    # nMatriz = 1
 
     while nMatriz != 0:
         datos = sys.stdin.readline().split(" ")
+        # datos = [4,3,4]
         nPisos = int(datos[0])
         nHabitaciones = int(datos[1])
         nPortales = int(datos[2])
         gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
+        # gastoEnergia = [2,1,3,0]
         portales = {}
-        entradas = []
-        salidas = []
 
         for i in range(nPortales):
             datos = sys.stdin.readline().split(" ")
-            portales[(int(datos[0]), int(datos[1]))] = (int(datos[2]), int(datos[3]))
-            entradas.append((int(datos[0]), int(datos[1])))
+            portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
+
+        entradas = list(portales.keys())
+
+        # portales = {(0,1): (2,0), (0,2): (3,2), (1,0): (3,1), (2,1): (3,0)}
+        # entradas = list(portales.keys())
 
         print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas))
-        # print(nPisos,nHabitaciones,nPortales)
-        # print(gastoEnergia)
-        # print(portales)
-
         nMatriz -= 1
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas):
     memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
+    memoria[0][0] = 0
     visitados = []
     porVisitar = []
 
+    porVisitar.append((0, 0))
 
-    pass
+    while len(porVisitar) > 0:
+        actual = porVisitar.pop(0)
+        vecinos = []
+        if actual[1] > 0 and (actual[0], actual[1] - 1) not in visitados:
+            vecinos.append((actual[0], actual[1] - 1))
+        if actual[1] < nHabitaciones - 1 and (actual[0], actual[1] + 1) not in visitados:
+            vecinos.append((actual[0], actual[1] + 1))
+        # TODO agregar vecino de arriba si existe
+        if actual in entradas and portales[actual] not in visitados:
+            vecinos.append(portales[actual])
+
+        for i in vecinos:
+            if i[0] > actual[0]:
+                nuevoGasto = memoria[actual[0]][actual[1]]
+            else:
+                nuevoGasto = gastoEnergia[i[0]] + memoria[actual[0]][actual[1]]
+            viejoGasto = memoria[i[0]][i[1]]
+            if nuevoGasto < viejoGasto:
+                memoria[i[0]][i[1]] = nuevoGasto
+                if i not in visitados:
+                    porVisitar.append(i)
+        visitados.append(actual)
+
+    goal = (nPisos - 1, nHabitaciones - 1)
+
+    if goal not in visitados:
+        return "NO EXISTE"
+    else:
+        return memoria[nPisos - 1][nHabitaciones - 1]
+
+
 
 start = timer()
 lectura()
