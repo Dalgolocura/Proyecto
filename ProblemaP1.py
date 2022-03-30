@@ -1,10 +1,10 @@
 """
 Parte 1 Proyecto DALGO 2022-1
 Autores:
-    Boris Reyes - 202014743
+    Boris Reyes     - 202014743
     Daniel Aguilera - 202010592
     Juliana Galeano - 202012128
-    William Mendez - 202012662
+    William Mendez  - 202012662
 """
 
 import sys
@@ -14,26 +14,35 @@ def lectura():
 
     while nMatriz != 0:
         datos = sys.stdin.readline().split(" ")
-        n = int(datos[0])
-        m = int(datos[1])
-        p = int(datos[2])
+        nPisos = int(datos[0])
+        nHabitaciones = int(datos[1])
+        nPortales = int(datos[2])
         gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
-        portales = []
+        portales = {}
+        entradas = []
+        salidas = []
 
-        for i in range(p):
+        for i in range(nPortales):
             datos = sys.stdin.readline().split(" ")
-            portales.append([(int(datos[0]), int(datos[1])), (int(datos[2]), int(datos[3]))])
+            portales[(int(datos[0]), int(datos[1]))] = (int(datos[2]), int(datos[3]))
+            entradas.append((int(datos[0]), int(datos[1])))
+            salidas.append((int(datos[2]), int(datos[3])))
 
-
-        print(n,m,p)
+        print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
+        print(nPisos,nHabitaciones,nPortales)
         print(gastoEnergia)
         print(portales)
 
         nMatriz -= 1
+
+def calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales):
+    memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
+
+    pass
 
 def main():
     lectura()
 
 main()
 
-# comando: python ProblemaP1.py <entrada.in> salida.out
+# comando: python ProblemaP1.py <2.in> salida.out
