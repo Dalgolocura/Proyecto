@@ -29,14 +29,14 @@ def lectura():
             portales[(int(datos[0]), int(datos[1]))] = (int(datos[2]), int(datos[3]))
             entradas.append((int(datos[0]), int(datos[1])))
 
-        print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
+        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas))
         # print(nPisos,nHabitaciones,nPortales)
         # print(gastoEnergia)
         # print(portales)
 
         nMatriz -= 1
 
-def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales):
+def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales, entradas):
     memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
     visitados = []
     porVisitar = []
