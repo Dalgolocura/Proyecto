@@ -8,6 +8,8 @@ Autores:
 """
 
 import sys
+from timeit import default_timer as timer
+from tracemalloc import start
 
 def lectura():
     nMatriz = int(sys.stdin.readline())
@@ -28,21 +30,27 @@ def lectura():
             entradas.append((int(datos[0]), int(datos[1])))
             salidas.append((int(datos[2]), int(datos[3])))
 
-        print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
-        print(nPisos,nHabitaciones,nPortales)
-        print(gastoEnergia)
-        print(portales)
+        # print(calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales))
+        # print(nPisos,nHabitaciones,nPortales)
+        # print(gastoEnergia)
+        # print(portales)
 
         nMatriz -= 1
 
-def calcularMinEnergia(nPisos, nHabitaciones, nPortales, gastoEnergia, portales):
+def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, nPortales, gastoEnergia, portales):
     memoria = [[1000001 for i in range(nHabitaciones)] for j in range(nPisos)]
+    visitados = []
+    porVisitar = []
+
 
     pass
 
-def main():
-    lectura()
+start = timer()
+lectura()
+elapsed_time = timer() - start
+print("Tiempo: %.10f segundos." % elapsed_time)
 
-main()
+# def dijkstra():
+#     if (i,j) in portales.keys()
 
 # comando: python ProblemaP1.py <2.in> salida.out
