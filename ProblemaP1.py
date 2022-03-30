@@ -15,10 +15,10 @@ def lectura():
 
     file = open("Proyecto/P1_casesFP.in", "r")
 
-    nMatriz = int(file.readline())
-    # nMatriz = int(sys.stdin.readline())
+    nCasos = int(file.readline())
+    # nCasos = int(sys.stdin.readline())
 
-    while nMatriz != 0:
+    while nCasos != 0:
         datos = file.readline().split(" ")
         # datos = sys.stdin.readline().split(" ")
         nPisos = int(datos[0])
@@ -37,8 +37,11 @@ def lectura():
         entradas.sort()
 
 
+        start = timer() # TODO: Quitar esto
         print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
-        nMatriz -= 1
+        elapsed_time = timer() - start # TODO: Quitar esto
+        print("Caso: ", nCasos, "Tiempo: ", elapsed_time) # TODO: Quitar esto
+        nCasos -= 1
 
 def binarySearch(array, x, low, high):
     high -= 1
@@ -59,7 +62,10 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     visitados = []
     porVisitar = [(0,0)]
 
+    j = 0
+
     while len(porVisitar) > 0:
+
         actual = porVisitar.pop(0)
         vecinos = []
         if actual[1] > 0 and (actual[0], actual[1] - 1) not in visitados:
@@ -87,6 +93,10 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
                 porVisitar.append(i)
         visitados.append(actual)
 
+        j += 1
+        if j % 10000 == 0:
+            print(j, "elementos visitados")
+
     goal = (nPisos - 1, nHabitaciones - 1)
 
     if goal not in visitados:
@@ -99,6 +109,6 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
 start = timer()
 lectura()
 elapsed_time = timer() - start
-print("Tiempo: %.10f segundos." % elapsed_time)
+print("Tiempo total: %.10f segundos." % elapsed_time)
 
 # comando: python ProblemaP1.py <2.in> salida.out
