@@ -1,5 +1,9 @@
-NO EXISTE
-NO EXISTE
-NO EXISTE
-NO EXISTE
-Tiempo: 0.0025577000 segundos.
+4
+Caso: 997 tamaño de la torre 4 x 3 Tiempo: 8.289999999999687e-05
+46597
+Caso: 998 tamaño de la torre 379 x 52 Tiempo: 1.5801255
+2890
+Caso: 999 tamaño de la torre 5 x 3 Tiempo: 4.320000000013202e-05
+284938
+Caso: 1000 tamaño de la torre 323 x 132 Tiempo: 2.1270089999999997
+Tiempo total: 3.7107393000 segundos.

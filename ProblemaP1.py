@@ -14,19 +14,21 @@ from queue import PriorityQueue as PQ
 
 def lectura():
 
-    file = open("1.in", "r")
+    # file = open("1.in", "r")
+    # file = open("2.in", "r")
+    # file = open("P1_casesFP.in", "r")
 
-    nCasos = int(file.readline())
-    # nCasos = int(sys.stdin.readline())
+    # nCasos = int(file.readline())
+    nCasos = int(sys.stdin.readline())
 
     while nCasos != 0:
-        datos = file.readline().split(" ")
-        # datos = sys.stdin.readline().split(" ")
+        # datos = file.readline().split(" ")
+        datos = sys.stdin.readline().split(" ")
         nPisos = int(datos[0])
         nHabitaciones = int(datos[1])
         nPortales = int(datos[2])
-        gastoEnergia = [int(x) for x in file.readline().split(" ")]
-        # gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
+        # gastoEnergia = [int(x) for x in file.readline().split(" ")]
+        gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
         portales = {}
 
         for i in range(nPortales):
@@ -38,10 +40,10 @@ def lectura():
         entradas.sort()
 
 
-        start = timer() # TODO: Quitar esto
+        # start = timer() # TODO: Quitar esto
         print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
-        elapsed_time = timer() - start # TODO: Quitar esto
-        print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
+        # elapsed_time = timer() - start # TODO: Quitar esto
+        # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
 def binarySearch(array, x, low, high):
@@ -56,30 +58,43 @@ def binarySearch(array, x, low, high):
             high = mid - 1
     return -1
 
+def inDict(dict, key) -> bool:
+    try:
+        dict[key]
+        return True
+    except KeyError:
+        return False
+
+
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas):
     inicio = (0,0)
     memoria = {}
     memoria[inicio] = 0
-    visitados = []
-    # porVisitar = [inicio]
+    visitados = {}
+    porVisitar = {inicio: 0}
 
-    j = 0
+    # j = 0
 
     pq = PQ()
     pq.put((inicio,0))
 
     while not pq.empty():
         (actual, dist) = pq.get()
+        porVisitar.pop(actual)
+
         # print(actual, dist)
-        visitados.append(actual)
+        visitados[actual] = 0
 
         vecinos = []
-        if actual[1] > 0 and (actual[0], actual[1] - 1) not in visitados:
+        if actual[1] > 0 and not inDict(visitados, (actual[0], actual[1]-1)):
             vecinos.append((actual[0], actual[1] - 1))
-        if actual[1] < nHabitaciones - 1 and (actual[0], actual[1] + 1) not in visitados:
+
+        if actual[1] < nHabitaciones and not inDict(visitados, (actual[0], actual[1]+1)):
             vecinos.append((actual[0], actual[1] + 1))
+
         index = binarySearch(entradas, actual, 0, len(entradas))
-        if index != -1 and portales[actual] not in visitados:
+
+        if index != -1 and not inDict(visitados, portales[actual]):
             vecinos.append(portales[actual])
 
         for vecino in vecinos:
@@ -88,24 +103,24 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
             else:
                 nuevoGasto = gastoEnergia[vecino[0]] + memoria[actual]
 
-            nuevo = vecino not in memoria.keys()
+            nuevo = not inDict(memoria, vecino)
             if nuevo:
                 memoria[vecino] = nuevoGasto
-            else:
-                viejoGasto = memoria[vecino]
-                if nuevoGasto < viejoGasto:
-                    pq.put((vecino, nuevoGasto))
-                    memoria[vecino] = nuevoGasto
-            if vecino not in visitados:
-                pq.put((vecino, nuevoGasto))
-                # porVisitar.append(vecino)
 
-        j += 1
-        if j % 10000 == 0:
-            print(j, "elementos visitados")
+            viejoGasto = memoria[vecino]
+            if nuevoGasto < viejoGasto:
+                memoria[vecino] = nuevoGasto
+            if vecino not in visitados and not inDict(porVisitar, vecino):
+                pq.put((vecino, nuevoGasto))
+                porVisitar[vecino] = 0
+
+        # j += 1
+        # if j % 10000 == 0:
+            # print(j, "elementos visitados")
 
     goal = (nPisos - 1, nHabitaciones - 1)
 
+    # print(j, "elementos visitados")
     if goal not in visitados:
         return "NO EXISTE"
     else:
