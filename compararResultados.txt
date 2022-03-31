@@ -1,235 +1,235 @@
 Casos mal:
-Caso 7: Nuestro 117903 Profe 69276
-Caso 11: Nuestro 48783 Profe 40228
-Caso 17: Nuestro 728850 Profe 536571
-Caso 19: Nuestro 36459 Profe 19422
-Caso 22: Nuestro 180702 Profe 123742
-Caso 27: Nuestro 342376 Profe 288939
-Caso 28: Nuestro 215238 Profe 176576
-Caso 30: Nuestro 339149 Profe 225619
-Caso 33: Nuestro 468740 Profe 327258
-Caso 36: Nuestro 482864 Profe 438812
-Caso 38: Nuestro 354226 Profe 281277
-Caso 42: Nuestro 241996 Profe 140167
-Caso 47: Nuestro 30556 Profe 21257
-Caso 48: Nuestro 139789 Profe 136284
-Caso 54: Nuestro 316441 Profe 241677
-Caso 62: Nuestro 161975 Profe 113331
-Caso 63: Nuestro 218225 Profe 197451
-Caso 79: Nuestro 347229 Profe 229080
-Caso 83: Nuestro 133029 Profe 60741
-Caso 87: Nuestro 394963 Profe 328662
-Caso 93: Nuestro 297153 Profe 283050
-Caso 95: Nuestro 33667 Profe 28358
-Caso 100: Nuestro 30490 Profe 19671
-Caso 102: Nuestro 14394 Profe 9684
-Caso 104: Nuestro 196985 Profe 147142
-Caso 108: Nuestro 270149 Profe 242568
-Caso 109: Nuestro 13215 Profe 12353
-Caso 112: Nuestro 866531 Profe 686190
-Caso 114: Nuestro 589441 Profe 466460
-Caso 115: Nuestro 867150 Profe 610963
-Caso 119: Nuestro 745305 Profe 527802
-Caso 122: Nuestro 633175 Profe 566653
-Caso 127: Nuestro 46213 Profe 43414
-Caso 129: Nuestro 635286 Profe 613731
-Caso 130: Nuestro 235949 Profe 186225
-Caso 131: Nuestro 140851 Profe 138953
-Caso 132: Nuestro 304625 Profe 247472
-Caso 149: Nuestro 1040985 Profe 953533
-Caso 154: Nuestro 115445 Profe 104879
-Caso 160: Nuestro 1356617 Profe 1310675
-Caso 161: Nuestro 510615 Profe 504996
-Caso 169: Nuestro 338736 Profe 309882
-Caso 172: Nuestro 334090 Profe 324165
-Caso 182: Nuestro 1078701 Profe 1048709
-Caso 185: Nuestro 232022 Profe 208633
-Caso 187: Nuestro 177535 Profe 170261
-Caso 191: Nuestro 135992 Profe 134308
-Caso 201: Nuestro 271370 Profe 170726
-Caso 204: Nuestro 248304 Profe 233435
-Caso 205: Nuestro 361785 Profe 259875
-Caso 209: Nuestro 773109 Profe 754871
-Caso 210: Nuestro 317112 Profe 281608
-Caso 214: Nuestro 119655 Profe 82740
-Caso 220: Nuestro 222760 Profe 177242
-Caso 221: Nuestro 279549 Profe 246161
-Caso 225: Nuestro 283185 Profe 250899
-Caso 228: Nuestro 276233 Profe 185235
-Caso 242: Nuestro 383172 Profe 275256
-Caso 245: Nuestro 214622 Profe 210264
-Caso 246: Nuestro 214617 Profe 193557
-Caso 249: Nuestro 104285 Profe 66214
-Caso 255: Nuestro 2113057 Profe 1777465
-Caso 261: Nuestro 58860 Profe 54977
-Caso 267: Nuestro 108593 Profe 74031
-Caso 268: Nuestro 138430 Profe 133136
-Caso 269: Nuestro 65359 Profe 58074
-Caso 275: Nuestro 34269 Profe 33115
-Caso 277: Nuestro 963094 Profe 805891
-Caso 279: Nuestro 145368 Profe 111569
-Caso 284: Nuestro 184997 Profe 171295
-Caso 293: Nuestro 382366 Profe 352306
-Caso 294: Nuestro 360873 Profe 310947
-Caso 295: Nuestro 405342 Profe 291310
-Caso 307: Nuestro 297714 Profe 283059
-Caso 311: Nuestro 246951 Profe 239746
-Caso 313: Nuestro 111971 Profe 79650
-Caso 316: Nuestro 456009 Profe 440754
-Caso 326: Nuestro 240084 Profe 182794
-Caso 327: Nuestro 99653 Profe 89765
-Caso 328: Nuestro 255638 Profe 219124
-Caso 332: Nuestro 38943 Profe 30685
-Caso 334: Nuestro 521359 Profe 407337
-Caso 345: Nuestro 155661 Profe 139888
-Caso 351: Nuestro 290162 Profe 285336
-Caso 353: Nuestro 137169 Profe 135331
-Caso 356: Nuestro 55537 Profe 48729
-Caso 358: Nuestro 693782 Profe 693097
-Caso 367: Nuestro 918603 Profe 821174
-Caso 369: Nuestro 79130 Profe 46644
-Caso 370: Nuestro 14765 Profe 12557
-Caso 382: Nuestro 459119 Profe 394744
-Caso 385: Nuestro 474512 Profe 400634
-Caso 390: Nuestro 372717 Profe 366635
-Caso 394: Nuestro 810078 Profe 706582
-Caso 395: Nuestro 105464 Profe 93967
-Caso 408: Nuestro 65139 Profe 37750
-Caso 418: Nuestro 381007 Profe 322870
-Caso 430: Nuestro 74600 Profe 58370
-Caso 435: Nuestro 612886 Profe 609712
-Caso 437: Nuestro 126153 Profe 120713
-Caso 441: Nuestro 518008 Profe 459103
-Caso 444: Nuestro 42651 Profe 34896
-Caso 451: Nuestro 322191 Profe 207378
-Caso 456: Nuestro 85302 Profe 70637
-Caso 461: Nuestro 285989 Profe 285605
-Caso 465: Nuestro 169815 Profe 167809
-Caso 471: Nuestro 275050 Profe 211897
-Caso 472: Nuestro 178504 Profe 95653
-Caso 476: Nuestro 1395633 Profe 1366458
-Caso 484: Nuestro 139616 Profe 119482
-Caso 490: Nuestro 278508 Profe 271457
-Caso 494: Nuestro 23304 Profe 21545
-Caso 496: Nuestro 402393 Profe 282181
-Caso 497: Nuestro 62822 Profe 53712
-Caso 498: Nuestro 944332 Profe 519681
-Caso 501: Nuestro 36646 Profe 28913
-Caso 503: Nuestro 148083 Profe 147377
-Caso 506: Nuestro 33434 Profe 25605
-Caso 512: Nuestro 84414 Profe 84037
-Caso 513: Nuestro 181939 Profe 132423
-Caso 519: Nuestro 309273 Profe 274242
-Caso 520: Nuestro 323387 Profe 215405
-Caso 522: Nuestro 185380 Profe 170248
-Caso 529: Nuestro 293197 Profe 277230
-Caso 533: Nuestro 554257 Profe 476843
-Caso 538: Nuestro 232893 Profe 145705
-Caso 542: Nuestro 566503 Profe 459699
-Caso 549: Nuestro 310329 Profe 256273
-Caso 553: Nuestro 25736 Profe 17741
-Caso 555: Nuestro 817664 Profe 781699
-Caso 557: Nuestro 1013884 Profe 693787
-Caso 558: Nuestro 10077 Profe 8436
-Caso 564: Nuestro 1162476 Profe 1106765
-Caso 565: Nuestro 208805 Profe 207199
-Caso 575: Nuestro 756080 Profe 588462
-Caso 577: Nuestro 1309721 Profe 705413
-Caso 581: Nuestro 506660 Profe 499048
-Caso 583: Nuestro 3541 Profe 3040
-Caso 584: Nuestro 154411 Profe 116033
-Caso 588: Nuestro 519394 Profe 315408
-Caso 602: Nuestro 751026 Profe 623076
-Caso 609: Nuestro 1529797 Profe 1362225
-Caso 613: Nuestro 524023 Profe 491955
-Caso 620: Nuestro 830414 Profe 568848
-Caso 621: Nuestro 449387 Profe 428077
-Caso 622: Nuestro 143045 Profe 116753
-Caso 629: Nuestro 1357616 Profe 1273968
-Caso 631: Nuestro 30802 Profe 19378
-Caso 632: Nuestro 150589 Profe 148157
-Caso 637: Nuestro 309610 Profe 295804
-Caso 650: Nuestro 187740 Profe 183329
-Caso 657: Nuestro 291930 Profe 291523
-Caso 662: Nuestro 6084 Profe 5441
-Caso 663: Nuestro 213073 Profe 132718
-Caso 664: Nuestro 192542 Profe 62147
-Caso 670: Nuestro 195335 Profe 152315
-Caso 673: Nuestro 63374 Profe 43031
-Caso 676: Nuestro 223109 Profe 214015
-Caso 677: Nuestro 193276 Profe 184554
-Caso 684: Nuestro 146883 Profe 127091
-Caso 689: Nuestro 300818 Profe 184221
-Caso 694: Nuestro 487993 Profe 468545
-Caso 697: Nuestro 293533 Profe 208092
-Caso 699: Nuestro 487808 Profe 428860
-Caso 701: Nuestro 55909 Profe 25003
-Caso 703: Nuestro 20561 Profe 12198
-Caso 709: Nuestro 1864957 Profe 1368545
-Caso 711: Nuestro 82934 Profe 76667
-Caso 725: Nuestro 516462 Profe 466970
-Caso 737: Nuestro 341027 Profe 289989
-Caso 742: Nuestro 26725 Profe 22395
-Caso 746: Nuestro 541818 Profe 474833
-Caso 763: Nuestro 915789 Profe 672427
-Caso 767: Nuestro 782548 Profe 752013
-Caso 769: Nuestro 291536 Profe 289397
-Caso 770: Nuestro 91689 Profe 91192
-Caso 771: Nuestro 289169 Profe 206016
-Caso 776: Nuestro 187946 Profe 166552
-Caso 777: Nuestro 311450 Profe 181839
-Caso 778: Nuestro 33311 Profe 31207
-Caso 781: Nuestro 103151 Profe 98008
-Caso 783: Nuestro 83883 Profe 82882
-Caso 790: Nuestro 201747 Profe 179460
-Caso 797: Nuestro 655812 Profe 523310
-Caso 801: Nuestro 932583 Profe 839472
-Caso 802: Nuestro 317536 Profe 258828
-Caso 807: Nuestro 223648 Profe 223189
-Caso 811: Nuestro 111869 Profe 52438
-Caso 824: Nuestro 751624 Profe 711787
-Caso 826: Nuestro 239055 Profe 223766
-Caso 828: Nuestro 1135671 Profe 1061460
-Caso 837: Nuestro 182465 Profe 172590
-Caso 841: Nuestro 712275 Profe 712069
-Caso 847: Nuestro 170583 Profe 153205
-Caso 853: Nuestro 274604 Profe 222308
-Caso 855: Nuestro 199068 Profe 190172
-Caso 857: Nuestro 48721 Profe 48266
-Caso 861: Nuestro 180627 Profe 178057
-Caso 866: Nuestro 784005 Profe 648196
-Caso 867: Nuestro 62326 Profe 51588
-Caso 872: Nuestro 587942 Profe 562008
-Caso 882: Nuestro 348196 Profe 336485
-Caso 884: Nuestro 207948 Profe 206931
-Caso 886: Nuestro 138178 Profe 116049
-Caso 896: Nuestro 328238 Profe 282122
-Caso 897: Nuestro 167238 Profe 134952
-Caso 899: Nuestro 577001 Profe 291782
-Caso 903: Nuestro 45684 Profe 31273
-Caso 904: Nuestro 649075 Profe 575337
-Caso 908: Nuestro 128664 Profe 97233
-Caso 909: Nuestro 860073 Profe 770500
-Caso 917: Nuestro 852713 Profe 796694
-Caso 922: Nuestro 1114965 Profe 1006396
-Caso 925: Nuestro 266433 Profe 139905
-Caso 936: Nuestro 827608 Profe 760111
-Caso 938: Nuestro 75615 Profe 62753
-Caso 940: Nuestro 93788 Profe 81770
-Caso 941: Nuestro 163924 Profe 140514
-Caso 948: Nuestro 119418 Profe 109712
-Caso 956: Nuestro 89357 Profe 69692
-Caso 958: Nuestro 536702 Profe 367678
-Caso 962: Nuestro 10825 Profe 10133
-Caso 969: Nuestro 260827 Profe 202138
-Caso 974: Nuestro 637057 Profe 588754
-Caso 977: Nuestro 368789 Profe 336762
-Caso 979: Nuestro 275050 Profe 247726
-Caso 983: Nuestro 566736 Profe 249003
-Caso 985: Nuestro 62824 Profe 49522
-Caso 989: Nuestro 59268 Profe 34546
-Caso 991: Nuestro 52070 Profe 40867
-Caso 992: Nuestro 839659 Profe 806313
-Caso 995: Nuestro 193489 Profe 151536
-Caso 1001: Nuestro Tiempo total: 305.9780272000 segundos. Profe Time:  5.366181373596191
+Caso 7: Nuestro 117903 Profe 69276 Diferencia: 48627
+Caso 11: Nuestro 48783 Profe 40228 Diferencia: 8555
+Caso 17: Nuestro 728850 Profe 536571 Diferencia: 192279
+Caso 19: Nuestro 36459 Profe 19422 Diferencia: 17037
+Caso 22: Nuestro 180702 Profe 123742 Diferencia: 56960
+Caso 27: Nuestro 342376 Profe 288939 Diferencia: 53437
+Caso 28: Nuestro 215238 Profe 176576 Diferencia: 38662
+Caso 30: Nuestro 339149 Profe 225619 Diferencia: 113530
+Caso 33: Nuestro 468740 Profe 327258 Diferencia: 141482
+Caso 36: Nuestro 482864 Profe 438812 Diferencia: 44052
+Caso 38: Nuestro 354226 Profe 281277 Diferencia: 72949
+Caso 42: Nuestro 241996 Profe 140167 Diferencia: 101829
+Caso 47: Nuestro 30556 Profe 21257 Diferencia: 9299
+Caso 48: Nuestro 139789 Profe 136284 Diferencia: 3505
+Caso 54: Nuestro 316441 Profe 241677 Diferencia: 74764
+Caso 62: Nuestro 161975 Profe 113331 Diferencia: 48644
+Caso 63: Nuestro 218225 Profe 197451 Diferencia: 20774
+Caso 79: Nuestro 347229 Profe 229080 Diferencia: 118149
+Caso 83: Nuestro 133029 Profe 60741 Diferencia: 72288
+Caso 87: Nuestro 394963 Profe 328662 Diferencia: 66301
+Caso 93: Nuestro 297153 Profe 283050 Diferencia: 14103
+Caso 95: Nuestro 33667 Profe 28358 Diferencia: 5309
+Caso 100: Nuestro 30490 Profe 19671 Diferencia: 10819
+Caso 102: Nuestro 14394 Profe 9684 Diferencia: 4710
+Caso 104: Nuestro 196985 Profe 147142 Diferencia: 49843
+Caso 108: Nuestro 270149 Profe 242568 Diferencia: 27581
+Caso 109: Nuestro 13215 Profe 12353 Diferencia: 862
+Caso 112: Nuestro 866531 Profe 686190 Diferencia: 180341
+Caso 114: Nuestro 589441 Profe 466460 Diferencia: 122981
+Caso 115: Nuestro 867150 Profe 610963 Diferencia: 256187
+Caso 119: Nuestro 745305 Profe 527802 Diferencia: 217503
+Caso 122: Nuestro 633175 Profe 566653 Diferencia: 66522
+Caso 127: Nuestro 46213 Profe 43414 Diferencia: 2799
+Caso 129: Nuestro 635286 Profe 613731 Diferencia: 21555
+Caso 130: Nuestro 235949 Profe 186225 Diferencia: 49724
+Caso 131: Nuestro 140851 Profe 138953 Diferencia: 1898
+Caso 132: Nuestro 304625 Profe 247472 Diferencia: 57153
+Caso 149: Nuestro 1040985 Profe 953533 Diferencia: 87452
+Caso 154: Nuestro 115445 Profe 104879 Diferencia: 10566
+Caso 160: Nuestro 1356617 Profe 1310675 Diferencia: 45942
+Caso 161: Nuestro 510615 Profe 504996 Diferencia: 5619
+Caso 169: Nuestro 338736 Profe 309882 Diferencia: 28854
+Caso 172: Nuestro 334090 Profe 324165 Diferencia: 9925
+Caso 182: Nuestro 1078701 Profe 1048709 Diferencia: 29992
+Caso 185: Nuestro 232022 Profe 208633 Diferencia: 23389
+Caso 187: Nuestro 177535 Profe 170261 Diferencia: 7274
+Caso 191: Nuestro 135992 Profe 134308 Diferencia: 1684
+Caso 201: Nuestro 271370 Profe 170726 Diferencia: 100644
+Caso 204: Nuestro 248304 Profe 233435 Diferencia: 14869
+Caso 205: Nuestro 361785 Profe 259875 Diferencia: 101910
+Caso 209: Nuestro 773109 Profe 754871 Diferencia: 18238
+Caso 210: Nuestro 317112 Profe 281608 Diferencia: 35504
+Caso 214: Nuestro 119655 Profe 82740 Diferencia: 36915
+Caso 220: Nuestro 222760 Profe 177242 Diferencia: 45518
+Caso 221: Nuestro 279549 Profe 246161 Diferencia: 33388
+Caso 225: Nuestro 283185 Profe 250899 Diferencia: 32286
+Caso 228: Nuestro 276233 Profe 185235 Diferencia: 90998
+Caso 242: Nuestro 383172 Profe 275256 Diferencia: 107916
+Caso 245: Nuestro 214622 Profe 210264 Diferencia: 4358
+Caso 246: Nuestro 214617 Profe 193557 Diferencia: 21060
+Caso 249: Nuestro 104285 Profe 66214 Diferencia: 38071
+Caso 255: Nuestro 2113057 Profe 1777465 Diferencia: 335592
+Caso 261: Nuestro 58860 Profe 54977 Diferencia: 3883
+Caso 267: Nuestro 108593 Profe 74031 Diferencia: 34562
+Caso 268: Nuestro 138430 Profe 133136 Diferencia: 5294
+Caso 269: Nuestro 65359 Profe 58074 Diferencia: 7285
+Caso 275: Nuestro 34269 Profe 33115 Diferencia: 1154
+Caso 277: Nuestro 963094 Profe 805891 Diferencia: 157203
+Caso 279: Nuestro 145368 Profe 111569 Diferencia: 33799
+Caso 284: Nuestro 184997 Profe 171295 Diferencia: 13702
+Caso 293: Nuestro 382366 Profe 352306 Diferencia: 30060
+Caso 294: Nuestro 360873 Profe 310947 Diferencia: 49926
+Caso 295: Nuestro 405342 Profe 291310 Diferencia: 114032
+Caso 307: Nuestro 297714 Profe 283059 Diferencia: 14655
+Caso 311: Nuestro 246951 Profe 239746 Diferencia: 7205
+Caso 313: Nuestro 111971 Profe 79650 Diferencia: 32321
+Caso 316: Nuestro 456009 Profe 440754 Diferencia: 15255
+Caso 326: Nuestro 240084 Profe 182794 Diferencia: 57290
+Caso 327: Nuestro 99653 Profe 89765 Diferencia: 9888
+Caso 328: Nuestro 255638 Profe 219124 Diferencia: 36514
+Caso 332: Nuestro 38943 Profe 30685 Diferencia: 8258
+Caso 334: Nuestro 521359 Profe 407337 Diferencia: 114022
+Caso 345: Nuestro 155661 Profe 139888 Diferencia: 15773
+Caso 351: Nuestro 290162 Profe 285336 Diferencia: 4826
+Caso 353: Nuestro 137169 Profe 135331 Diferencia: 1838
+Caso 356: Nuestro 55537 Profe 48729 Diferencia: 6808
+Caso 358: Nuestro 693782 Profe 693097 Diferencia: 685
+Caso 367: Nuestro 918603 Profe 821174 Diferencia: 97429
+Caso 369: Nuestro 79130 Profe 46644 Diferencia: 32486
+Caso 370: Nuestro 14765 Profe 12557 Diferencia: 2208
+Caso 382: Nuestro 459119 Profe 394744 Diferencia: 64375
+Caso 385: Nuestro 474512 Profe 400634 Diferencia: 73878
+Caso 390: Nuestro 372717 Profe 366635 Diferencia: 6082
+Caso 394: Nuestro 810078 Profe 706582 Diferencia: 103496
+Caso 395: Nuestro 105464 Profe 93967 Diferencia: 11497
+Caso 408: Nuestro 65139 Profe 37750 Diferencia: 27389
+Caso 418: Nuestro 381007 Profe 322870 Diferencia: 58137
+Caso 430: Nuestro 74600 Profe 58370 Diferencia: 16230
+Caso 435: Nuestro 612886 Profe 609712 Diferencia: 3174
+Caso 437: Nuestro 126153 Profe 120713 Diferencia: 5440
+Caso 441: Nuestro 518008 Profe 459103 Diferencia: 58905
+Caso 444: Nuestro 42651 Profe 34896 Diferencia: 7755
+Caso 451: Nuestro 322191 Profe 207378 Diferencia: 114813
+Caso 456: Nuestro 85302 Profe 70637 Diferencia: 14665
+Caso 461: Nuestro 285989 Profe 285605 Diferencia: 384
+Caso 465: Nuestro 169815 Profe 167809 Diferencia: 2006
+Caso 471: Nuestro 275050 Profe 211897 Diferencia: 63153
+Caso 472: Nuestro 178504 Profe 95653 Diferencia: 82851
+Caso 476: Nuestro 1395633 Profe 1366458 Diferencia: 29175
+Caso 484: Nuestro 139616 Profe 119482 Diferencia: 20134
+Caso 490: Nuestro 278508 Profe 271457 Diferencia: 7051
+Caso 494: Nuestro 23304 Profe 21545 Diferencia: 1759
+Caso 496: Nuestro 402393 Profe 282181 Diferencia: 120212
+Caso 497: Nuestro 62822 Profe 53712 Diferencia: 9110
+Caso 498: Nuestro 944332 Profe 519681 Diferencia: 424651
+Caso 501: Nuestro 36646 Profe 28913 Diferencia: 7733
+Caso 503: Nuestro 148083 Profe 147377 Diferencia: 706
+Caso 506: Nuestro 33434 Profe 25605 Diferencia: 7829
+Caso 512: Nuestro 84414 Profe 84037 Diferencia: 377
+Caso 513: Nuestro 181939 Profe 132423 Diferencia: 49516
+Caso 519: Nuestro 309273 Profe 274242 Diferencia: 35031
+Caso 520: Nuestro 323387 Profe 215405 Diferencia: 107982
+Caso 522: Nuestro 185380 Profe 170248 Diferencia: 15132
+Caso 529: Nuestro 293197 Profe 277230 Diferencia: 15967
+Caso 533: Nuestro 554257 Profe 476843 Diferencia: 77414
+Caso 538: Nuestro 232893 Profe 145705 Diferencia: 87188
+Caso 542: Nuestro 566503 Profe 459699 Diferencia: 106804
+Caso 549: Nuestro 310329 Profe 256273 Diferencia: 54056
+Caso 553: Nuestro 25736 Profe 17741 Diferencia: 7995
+Caso 555: Nuestro 817664 Profe 781699 Diferencia: 35965
+Caso 557: Nuestro 1013884 Profe 693787 Diferencia: 320097
+Caso 558: Nuestro 10077 Profe 8436 Diferencia: 1641
+Caso 564: Nuestro 1162476 Profe 1106765 Diferencia: 55711
+Caso 565: Nuestro 208805 Profe 207199 Diferencia: 1606
+Caso 575: Nuestro 756080 Profe 588462 Diferencia: 167618
+Caso 577: Nuestro 1309721 Profe 705413 Diferencia: 604308
+Caso 581: Nuestro 506660 Profe 499048 Diferencia: 7612
+Caso 583: Nuestro 3541 Profe 3040 Diferencia: 501
+Caso 584: Nuestro 154411 Profe 116033 Diferencia: 38378
+Caso 588: Nuestro 519394 Profe 315408 Diferencia: 203986
+Caso 602: Nuestro 751026 Profe 623076 Diferencia: 127950
+Caso 609: Nuestro 1529797 Profe 1362225 Diferencia: 167572
+Caso 613: Nuestro 524023 Profe 491955 Diferencia: 32068
+Caso 620: Nuestro 830414 Profe 568848 Diferencia: 261566
+Caso 621: Nuestro 449387 Profe 428077 Diferencia: 21310
+Caso 622: Nuestro 143045 Profe 116753 Diferencia: 26292
+Caso 629: Nuestro 1357616 Profe 1273968 Diferencia: 83648
+Caso 631: Nuestro 30802 Profe 19378 Diferencia: 11424
+Caso 632: Nuestro 150589 Profe 148157 Diferencia: 2432
+Caso 637: Nuestro 309610 Profe 295804 Diferencia: 13806
+Caso 650: Nuestro 187740 Profe 183329 Diferencia: 4411
+Caso 657: Nuestro 291930 Profe 291523 Diferencia: 407
+Caso 662: Nuestro 6084 Profe 5441 Diferencia: 643
+Caso 663: Nuestro 213073 Profe 132718 Diferencia: 80355
+Caso 664: Nuestro 192542 Profe 62147 Diferencia: 130395
+Caso 670: Nuestro 195335 Profe 152315 Diferencia: 43020
+Caso 673: Nuestro 63374 Profe 43031 Diferencia: 20343
+Caso 676: Nuestro 223109 Profe 214015 Diferencia: 9094
+Caso 677: Nuestro 193276 Profe 184554 Diferencia: 8722
+Caso 684: Nuestro 146883 Profe 127091 Diferencia: 19792
+Caso 689: Nuestro 300818 Profe 184221 Diferencia: 116597
+Caso 694: Nuestro 487993 Profe 468545 Diferencia: 19448
+Caso 697: Nuestro 293533 Profe 208092 Diferencia: 85441
+Caso 699: Nuestro 487808 Profe 428860 Diferencia: 58948
+Caso 701: Nuestro 55909 Profe 25003 Diferencia: 30906
+Caso 703: Nuestro 20561 Profe 12198 Diferencia: 8363
+Caso 709: Nuestro 1864957 Profe 1368545 Diferencia: 496412
+Caso 711: Nuestro 82934 Profe 76667 Diferencia: 6267
+Caso 725: Nuestro 516462 Profe 466970 Diferencia: 49492
+Caso 737: Nuestro 341027 Profe 289989 Diferencia: 51038
+Caso 742: Nuestro 26725 Profe 22395 Diferencia: 4330
+Caso 746: Nuestro 541818 Profe 474833 Diferencia: 66985
+Caso 763: Nuestro 915789 Profe 672427 Diferencia: 243362
+Caso 767: Nuestro 782548 Profe 752013 Diferencia: 30535
+Caso 769: Nuestro 291536 Profe 289397 Diferencia: 2139
+Caso 770: Nuestro 91689 Profe 91192 Diferencia: 497
+Caso 771: Nuestro 289169 Profe 206016 Diferencia: 83153
+Caso 776: Nuestro 187946 Profe 166552 Diferencia: 21394
+Caso 777: Nuestro 311450 Profe 181839 Diferencia: 129611
+Caso 778: Nuestro 33311 Profe 31207 Diferencia: 2104
+Caso 781: Nuestro 103151 Profe 98008 Diferencia: 5143
+Caso 783: Nuestro 83883 Profe 82882 Diferencia: 1001
+Caso 790: Nuestro 201747 Profe 179460 Diferencia: 22287
+Caso 797: Nuestro 655812 Profe 523310 Diferencia: 132502
+Caso 801: Nuestro 932583 Profe 839472 Diferencia: 93111
+Caso 802: Nuestro 317536 Profe 258828 Diferencia: 58708
+Caso 807: Nuestro 223648 Profe 223189 Diferencia: 459
+Caso 811: Nuestro 111869 Profe 52438 Diferencia: 59431
+Caso 824: Nuestro 751624 Profe 711787 Diferencia: 39837
+Caso 826: Nuestro 239055 Profe 223766 Diferencia: 15289
+Caso 828: Nuestro 1135671 Profe 1061460 Diferencia: 74211
+Caso 837: Nuestro 182465 Profe 172590 Diferencia: 9875
+Caso 841: Nuestro 712275 Profe 712069 Diferencia: 206
+Caso 847: Nuestro 170583 Profe 153205 Diferencia: 17378
+Caso 853: Nuestro 274604 Profe 222308 Diferencia: 52296
+Caso 855: Nuestro 199068 Profe 190172 Diferencia: 8896
+Caso 857: Nuestro 48721 Profe 48266 Diferencia: 455
+Caso 861: Nuestro 180627 Profe 178057 Diferencia: 2570
+Caso 866: Nuestro 784005 Profe 648196 Diferencia: 135809
+Caso 867: Nuestro 62326 Profe 51588 Diferencia: 10738
+Caso 872: Nuestro 587942 Profe 562008 Diferencia: 25934
+Caso 882: Nuestro 348196 Profe 336485 Diferencia: 11711
+Caso 884: Nuestro 207948 Profe 206931 Diferencia: 1017
+Caso 886: Nuestro 138178 Profe 116049 Diferencia: 22129
+Caso 896: Nuestro 328238 Profe 282122 Diferencia: 46116
+Caso 897: Nuestro 167238 Profe 134952 Diferencia: 32286
+Caso 899: Nuestro 577001 Profe 291782 Diferencia: 285219
+Caso 903: Nuestro 45684 Profe 31273 Diferencia: 14411
+Caso 904: Nuestro 649075 Profe 575337 Diferencia: 73738
+Caso 908: Nuestro 128664 Profe 97233 Diferencia: 31431
+Caso 909: Nuestro 860073 Profe 770500 Diferencia: 89573
+Caso 917: Nuestro 852713 Profe 796694 Diferencia: 56019
+Caso 922: Nuestro 1114965 Profe 1006396 Diferencia: 108569
+Caso 925: Nuestro 266433 Profe 139905 Diferencia: 126528
+Caso 936: Nuestro 827608 Profe 760111 Diferencia: 67497
+Caso 938: Nuestro 75615 Profe 62753 Diferencia: 12862
+Caso 940: Nuestro 93788 Profe 81770 Diferencia: 12018
+Caso 941: Nuestro 163924 Profe 140514 Diferencia: 23410
+Caso 948: Nuestro 119418 Profe 109712 Diferencia: 9706
+Caso 956: Nuestro 89357 Profe 69692 Diferencia: 19665
+Caso 958: Nuestro 536702 Profe 367678 Diferencia: 169024
+Caso 962: Nuestro 10825 Profe 10133 Diferencia: 692
+Caso 969: Nuestro 260827 Profe 202138 Diferencia: 58689
+Caso 974: Nuestro 637057 Profe 588754 Diferencia: 48303
+Caso 977: Nuestro 368789 Profe 336762 Diferencia: 32027
+Caso 979: Nuestro 275050 Profe 247726 Diferencia: 27324
+Caso 983: Nuestro 566736 Profe 249003 Diferencia: 317733
+Caso 985: Nuestro 62824 Profe 49522 Diferencia: 13302
+Caso 989: Nuestro 59268 Profe 34546 Diferencia: 24722
+Caso 991: Nuestro 52070 Profe 40867 Diferencia: 11203
+Caso 992: Nuestro 839659 Profe 806313 Diferencia: 33346
+Caso 995: Nuestro 193489 Profe 151536 Diferencia: 41953
+Caso 1001: Nuestro Tiempo total: 309.9893817000 segundos. Profe Time:  5.366181373596191
 Casos diferentes:233
