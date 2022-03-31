@@ -30,18 +30,27 @@ def lectura():
         # gastoEnergia = [int(x) for x in file.readline().split(" ")]
         gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
         portales = {}
+        pisosNoVisitados = {x: 0 for x in range(nPisos)}
 
         for i in range(nPortales):
             # datos = file.readline().split(" ")
             datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
+            if inDict(pisosNoVisitados, int(datos[2])-1):
+                pisosNoVisitados.pop(int(datos[2])-1)
 
         entradas = list(portales.keys())
         entradas.sort()
 
-
         # start = timer() # TODO: Quitar esto
-        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
+        if inDict(pisosNoVisitados, nPisos - 1):
+            print("NO EXISTE")
+        else:
+            for i in entradas:
+                if inDict(pisosNoVisitados, i[0]):
+                    portales.pop(i)
+            print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
+
         # elapsed_time = timer() - start # TODO: Quitar esto
         # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
@@ -97,7 +106,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
 
         index = binarySearch(entradas, actual, 0, len(entradas))
 
-        if index != -1 and not inDict(visitados, portales[actual]):
+        # if index != -1 and not inDict(visitados, portales[actual]):
+        if inDict(portales, actual) and not inDict(visitados, portales[actual]):
             vecinos.append(portales[actual])
 
         for vecino in vecinos:
