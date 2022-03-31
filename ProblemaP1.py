@@ -71,7 +71,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     memoria = {}
     memoria[inicio] = 0
     visitados = {}
-    porVisitar = [inicio]
+    porVisitar = {inicio: 0}
 
     # j = 0
 
@@ -81,7 +81,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     # while not pq.empty():
     while len(porVisitar) > 0:
         # (actual, dist) = pq.get()
-        actual = porVisitar.pop(0)
+        actual = porVisitar.pop(porVisitar.keys()[0])
         # porVisitar.pop(actual)
 
         # print(actual, dist)
@@ -113,7 +113,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
             if nuevoGasto < viejoGasto:
                 memoria[vecino] = nuevoGasto
             if not inDict(visitados, vecino) and vecino not in porVisitar:
-                porVisitar.append(vecino)
+                porVisitar[vecino] = 0
+                # porVisitar.append(vecino)
 
         # j += 1
         # if j % 10000 == 0:
