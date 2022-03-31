@@ -32,8 +32,8 @@ def lectura():
         portales = {}
 
         for i in range(nPortales):
-            datos = file.readline().split(" ")
-            # datos = sys.stdin.readline().split(" ")
+            # datos = file.readline().split(" ")
+            datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
         entradas = list(portales.keys())
