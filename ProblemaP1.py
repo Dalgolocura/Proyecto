@@ -81,7 +81,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     # while not pq.empty():
     while len(porVisitar) > 0:
         # (actual, dist) = pq.get()
-        actual = porVisitar.pop(list(porVisitar.keys())[0])
+        actual = list(porVisitar.keys())[0]
+        porVisitar.pop(list(porVisitar.keys())[0])
         # porVisitar.pop(actual)
 
         # print(actual, dist)
