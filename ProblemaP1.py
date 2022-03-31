@@ -110,7 +110,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
             viejoGasto = memoria[vecino]
             if nuevoGasto < viejoGasto:
                 memoria[vecino] = nuevoGasto
-            if vecino not in visitados and not inDict(porVisitar, vecino):
+            if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
                 pq.put((vecino, nuevoGasto))
                 porVisitar[vecino] = 0
 
@@ -121,7 +121,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     goal = (nPisos - 1, nHabitaciones - 1)
 
     # print(j, "elementos visitados")
-    if goal not in visitados:
+    if not inDict(visitados, goal):
         return "NO EXISTE"
     else:
         return memoria[(nPisos - 1,nHabitaciones - 1)]
