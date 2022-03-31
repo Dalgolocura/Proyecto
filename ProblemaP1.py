@@ -10,7 +10,7 @@ Autores:
 import sys
 from timeit import default_timer as timer
 from tracemalloc import start
-from queue import PriorityQueue as PQ
+# from queue import PriorityQueue as PQ
 
 def lectura():
 
@@ -32,8 +32,8 @@ def lectura():
         portales = {}
 
         for i in range(nPortales):
-            datos = file.readline().split(" ")
-            # datos = sys.stdin.readline().split(" ")
+            # datos = file.readline().split(" ")
+            datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
         entradas = list(portales.keys())
@@ -71,16 +71,18 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     memoria = {}
     memoria[inicio] = 0
     visitados = {}
-    porVisitar = {inicio: 0}
+    porVisitar = [inicio]
 
     # j = 0
 
-    pq = PQ()
-    pq.put((inicio,0))
+    # pq = PQ()
+    # pq.put((inicio,0))
 
-    while not pq.empty():
-        (actual, dist) = pq.get()
-        porVisitar.pop(actual)
+    # while not pq.empty():
+    while len(porVisitar) > 0:
+        # (actual, dist) = pq.get()
+        actual = porVisitar.pop(0)
+        # porVisitar.pop(actual)
 
         # print(actual, dist)
         visitados[actual] = 0
@@ -110,9 +112,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
             viejoGasto = memoria[vecino]
             if nuevoGasto < viejoGasto:
                 memoria[vecino] = nuevoGasto
-            if vecino not in visitados and not inDict(porVisitar, vecino):
-                pq.put((vecino, nuevoGasto))
-                porVisitar[vecino] = 0
+            if not inDict(visitados, vecino) and vecino not in porVisitar:
+                porVisitar.append(vecino)
 
         # j += 1
         # if j % 10000 == 0:
@@ -121,7 +122,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     goal = (nPisos - 1, nHabitaciones - 1)
 
     # print(j, "elementos visitados")
-    if goal not in visitados:
+    if not inDict(visitados, goal):
         return "NO EXISTE"
     else:
         return memoria[(nPisos - 1,nHabitaciones - 1)]
