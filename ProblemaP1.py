@@ -68,7 +68,7 @@ def lectura():
         print(len(casos[0]))
         start = timer()
         pool = mp.Pool(processes=nProcesadores)
-        print(pool.map(calcularMinEnergiaDijkstra, casos))
+        print("\n".join(pool.map(calcularMinEnergiaDijkstra, casos)))
         # print(calcularMinEnergiaDijkstra(caso))
         elapsed_time = timer() - start
         print("Time: %.10f segundos." % elapsed_time)
@@ -129,7 +129,7 @@ def calcularMinEnergiaDijkstra(casos):
                 resultados.append("NO EXISTE")
             else:
                 resultados.append(str(memoria[(nPisos - 1,nHabitaciones - 1)]))
-    return " ".join(resultados)
+    return "\n".join(resultados)
 
 
 
