@@ -9,7 +9,8 @@ Autores:
 
 from sys import stdin
 from timeit import default_timer as timer
-from queue import PriorityQueue as PQ
+#from queue import PriorityQueue as PQ
+import heapq as boris
 
 def lectura():
 
@@ -64,11 +65,14 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     porVisitar = {inicio: 0}
 
     # j = 0
-    pq = PQ()
-    pq.put((0,inicio))
-
-    while not pq.empty():
-        (dist, actual) = pq.get()
+    listap=[]
+    boris.heappush(listap, (0,inicio))
+    #pq = PQ()
+    #pq.put((0,inicio))
+    
+    while len(listap) != 0:
+    #while not pq.empty():
+        (dist, actual) = boris.heappop(listap)
         porVisitar.pop(actual)
 
         # print(actual, dist)
@@ -102,7 +106,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
                 memoria[vecino] = nuevoGasto
             # if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
             if visitados.get(vecino, -1) == -1 and porVisitar.get(vecino, -1) == -1:
-                pq.put((nuevoGasto, vecino))
+                boris.heappush(listap, (nuevoGasto, vecino))
+                #pq.put((nuevoGasto, vecino))
                 porVisitar[vecino] = 0
 
         # j += 1
@@ -126,4 +131,4 @@ elapsed_time = timer() - start
 print("Time: %.10f segundos." % elapsed_time)
 
 
-# comando: python ProblemaP1.py <2.in> salida.out
+# comando: python ProblemaP1.py <P1_casesFP.in> salida.out
