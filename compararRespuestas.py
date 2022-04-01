@@ -1,6 +1,6 @@
-file1 = open("salida.out", "r")
-file2 = open("P2_casesFP.out", "r")
-fileSalida = open("compararResultados.txt", "w")
+file1 = open("Proyecto/salida.out", "r")
+file2 = open("Proyecto/P2_casesFP.out", "r")
+fileSalida = open("Proyecto/compararResultados.txt", "w")
 diferentes = 0
 caso = 1
 

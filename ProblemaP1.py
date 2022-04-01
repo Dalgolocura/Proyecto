@@ -7,10 +7,12 @@ Autores:
     William Mendez  - 202012662
 """
 
+import re
 from sys import stdin
 from timeit import default_timer as timer
 import heapq as hq
 import multiprocessing as mp
+from unittest import result
 
 def lectura():
     if __name__ == "__main__":
@@ -66,13 +68,14 @@ def lectura():
         print(len(casos[0]))
         start = timer()
         pool = mp.Pool(processes=nProcesadores)
-        resultados = pool.map(calcularMinEnergiaDijkstra, casos)
+        print(pool.map(calcularMinEnergiaDijkstra, casos))
         # print(calcularMinEnergiaDijkstra(caso))
         elapsed_time = timer() - start
         print("Time: %.10f segundos." % elapsed_time)
 
 def calcularMinEnergiaDijkstra(casos):
     # print(caso)
+    resultados = []
     for caso in casos:
         if caso != []:
             (nPisos, nHabitaciones, gastoEnergia, portales) = caso[0], caso[1], caso[2], caso[3]
@@ -123,9 +126,10 @@ def calcularMinEnergiaDijkstra(casos):
             goal = (nPisos - 1, nHabitaciones - 1)
 
             if visitados.get(goal, -1) == -1:
-                print("NO EXISTE")
+                resultados.append("NO EXISTE")
             else:
-                print(memoria[(nPisos - 1,nHabitaciones - 1)])
+                resultados.append(memoria[(nPisos - 1,nHabitaciones - 1)])
+    return "".join(resultados, "\n")
 
 
 
