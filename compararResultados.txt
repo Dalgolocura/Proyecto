@@ -1,0 +1,3 @@
+Casos mal:
+Caso 1001: Nuestro Tiempo total: 384.9061919000 segundos. Profe Time:  5.366181373596191
+Casos diferentes:1
