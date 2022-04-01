@@ -1,4 +1,4 @@
-file1 = open("salidaNoVisitarPisos.out", "r")
+file1 = open("salidaPardo.out", "r")
 file2 = open("P2_casesFP.out", "r")
 fileSalida = open("compararResultados.txt", "w")
 diferentes = 0

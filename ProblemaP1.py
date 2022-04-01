@@ -7,40 +7,38 @@ Autores:
     William Mendez  - 202012662
 """
 
-import sys
-from pydoc import describe
+from sys import stdin
 from timeit import default_timer as timer
-from tracemalloc import start
 
 def lectura():
 
     # file = open("1.in", "r")
     # file = open("Proyecto/2.in", "r")
-    # file = open("Proyecto/P1_casesFP.in", "r")
+    file = open("Proyecto/P1_casesFP.in", "r")
 
-    # nCasos = int(file.readline())
-    nCasos = int(sys.stdin.readline())
+    nCasos = int(file.readline())
+    nCasos = int(stdin.readline())
 
     while nCasos != 0:
-        # datos = file.readline().split(" ")
-        datos = sys.stdin.readline().split(" ")
+        datos = file.readline().split(" ")
+        # datos = stdin.readline().split(" ")
         nPisos = int(datos[0])
         nHabitaciones = int(datos[1])
         nPortales = int(datos[2])
-        # gastoEnergia = [int(x) for x in file.readline().split(" ")]
-        gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
+        gastoEnergia = [int(x) for x in file.readline().split(" ")]
+        # gastoEnergia = [int(x) for x in stdin.readline().split(" ")]
         portales = {}
 
         for i in range(nPortales):
-            # datos = file.readline().split(" ")
-            datos = sys.stdin.readline().split(" ")
+            datos = file.readline().split(" ")
+            # datos = stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
-        # start = timer() # TODO: Quitar esto
+        start = timer() # TODO: Quitar esto
         print(calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales))
         # print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
-        # elapsed_time = timer() - start # TODO: Quitar esto
-        # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
+        elapsed_time = timer() - start # TODO: Quitar esto
+        print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
 def binarySearch(array, x, low, high):
