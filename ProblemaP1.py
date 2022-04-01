@@ -62,10 +62,11 @@ def lectura():
             # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
             nCasos -= 1
 
-        print("Procesadores:", nProcesadores)
-        print("Total de casos:", tCasos)
-        print("Casos por procesador:", casosPorProcesador)
-        print(len(casos[0]))
+        
+        # print("Procesadores:", nProcesadores)
+        # print("Total de casos:", tCasos)
+        # print("Casos por procesador:", casosPorProcesador)
+        # print(len(casos[0]))
         start = timer()
         pool = mp.Pool(processes=nProcesadores)
         print("\n".join(pool.map(calcularMinEnergiaDijkstra, casos)).strip())
