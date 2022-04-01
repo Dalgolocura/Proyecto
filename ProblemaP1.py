@@ -7,7 +7,7 @@ Autores:
     William Mendez  - 202012662
 """
 
-import sys
+from sys import stdin
 from timeit import default_timer as timer
 from queue import PriorityQueue as PQ
 
@@ -18,22 +18,22 @@ def lectura():
     # file = open("Proyecto/P1_casesFP.in", "r")
 
     # nCasos = int(file.readline())
-    nCasos = int(sys.stdin.readline())
+    nCasos = int(stdin.readline())
 
     while nCasos != 0:
         # datos = file.readline().split(" ")
-        datos = sys.stdin.readline().split(" ")
+        datos = stdin.readline().split(" ")
         nPisos = int(datos[0])
         nHabitaciones = int(datos[1])
         nPortales = int(datos[2])
         # gastoEnergia = [int(x) for x in file.readline().split(" ")]
-        gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
+        gastoEnergia = [int(x) for x in stdin.readline().split(" ")]
         portales = {}
         pisosNoVisitados = {x: 0 for x in range(1,nPisos)}
 
         for i in range(nPortales):
             # datos = file.readline().split(" ")
-            datos = sys.stdin.readline().split(" ")
+            datos = stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
             # if inDict(pisosNoVisitados, int(datos[2])-1):
             if pisosNoVisitados.get(int(datos[2])-1, -1) != -1:
