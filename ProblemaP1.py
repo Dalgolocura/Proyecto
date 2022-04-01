@@ -9,7 +9,7 @@ Autores:
 
 from sys import stdin
 from timeit import default_timer as timer
-from queue import PriorityQueue as PQ
+import heapq as hq
 
 def lectura():
 
@@ -64,11 +64,12 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     porVisitar = {inicio: 0}
 
     # j = 0
-    pq = PQ()
-    pq.put((0,inicio))
+    pq = []
+    entry = (0, inicio)
+    hq.heappush(pq,entry)
 
-    while not pq.empty():
-        (dist, actual) = pq.get()
+    while len(pq)>0:
+        (dist, actual) = hq.heappop(pq)
         porVisitar.pop(actual)
 
         # print(actual, dist)
@@ -102,7 +103,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
                 memoria[vecino] = nuevoGasto
             # if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
             if visitados.get(vecino, -1) == -1 and porVisitar.get(vecino, -1) == -1:
-                pq.put((nuevoGasto, vecino))
+                hq.heappush(pq,(nuevoGasto, vecino))
                 porVisitar[vecino] = 0
 
         # j += 1
