@@ -128,7 +128,7 @@ def calcularMinEnergiaDijkstra(casos):
             if visitados.get(goal, -1) == -1:
                 resultados.append("NO EXISTE")
             else:
-                resultados.append(memoria[(nPisos - 1,nHabitaciones - 1)])
+                resultados.append(str(memoria[(nPisos - 1,nHabitaciones - 1)]))
     return " ".join(resultados)
 
 
