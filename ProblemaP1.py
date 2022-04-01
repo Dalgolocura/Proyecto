@@ -16,53 +16,36 @@ from unittest import result
 
 def lectura():
     if __name__ == "__main__":
-
-
-        # file = open("1.in", "r")
-        # file = open("2.in", "r")
-        # file = open("Proyecto/P1_casesFP.in", "r")
-
-        # nCasos = int(file.readline())
         nCasos = int(stdin.readline())
         nProcesadores, tCasos = mp.cpu_count(), nCasos
         casosPorProcesador= nCasos//nProcesadores + 1
         casos = [[] for i in range(nProcesadores)]
         while nCasos != 0:
-            # datos = file.readline().split(" ")
             datos = stdin.readline().split(" ")
             nPisos, nHabitaciones, nPortales = int(datos[0]), int(datos[1]), int(datos[2])
-            # gastoEnergia = [int(x) for x in file.readline().split(" ")]
             gastoEnergia = [int(x) for x in stdin.readline().split(" ")]
             portales, pisosNoVisitados = {}, {x: 0 for x in range(1,nPisos)}
 
             for i in range(nPortales):
-                # datos = file.readline().split(" ")
                 datos = stdin.readline().split(" ")
                 portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
-                # if inDict(pisosNoVisitados, int(datos[2])-1):
                 if pisosNoVisitados.get(int(datos[2])-1, -1) != -1:
                     pisosNoVisitados.pop(int(datos[2])-1)
 
-            entradas = list(portales.keys())
+            # entradas = list(portales.keys())
 
-            # start = timer() # TODO: Quitar esto
-            # if inDict(pisosNoVisitados, nPisos - 1):
-            # if pisosNoVisitados.get(nPisos - 1, -1) != -1:
-            #     print("NO EXISTE")
-            # else:
-            for i in entradas:
-                # if inDict(pisosNoVisitados, i[0]):
-                if pisosNoVisitados.get(i[0], -1) != -1:
-                    portales.pop(i)
+            # # start = timer() # TODO: Quitar esto
+            # for i in entradas:
+            #     if pisosNoVisitados.get(i[0], -1) != -1:
+            #         portales.pop(i)
 
             caso = (nPisos, nHabitaciones, gastoEnergia, portales)
             casos[(tCasos - nCasos)//casosPorProcesador].append(caso)
-
             # elapsed_time = timer() - start # TODO: Quitar esto
             # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
             nCasos -= 1
 
-        
+
         # print("Procesadores:", nProcesadores)
         # print("Total de casos:", tCasos)
         # print("Casos por procesador:", casosPorProcesador)
