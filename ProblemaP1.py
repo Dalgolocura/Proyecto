@@ -8,15 +8,15 @@ Autores:
 """
 
 import sys
+from pydoc import describe
 from timeit import default_timer as timer
 from tracemalloc import start
-# from queue import PriorityQueue as PQ
 
 def lectura():
 
     # file = open("1.in", "r")
-    # file = open("2.in", "r")
-    # file = open("P1_casesFP.in", "r")
+    # file = open("Proyecto/2.in", "r")
+    # file = open("Proyecto/P1_casesFP.in", "r")
 
     # nCasos = int(file.readline())
     nCasos = int(sys.stdin.readline())
@@ -36,12 +36,9 @@ def lectura():
             datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
-        entradas = list(portales.keys())
-        entradas.sort()
-
-
         # start = timer() # TODO: Quitar esto
-        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
+        print(calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales))
+        # print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
         # elapsed_time = timer() - start # TODO: Quitar esto
         # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
@@ -64,6 +61,95 @@ def inDict(dict, key) -> bool:
         return True
     except KeyError:
         return False
+
+def calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales):
+    memoria = {(0,0): 0}
+
+    for piso in range(nPisos):
+        for nHabitacion in range(nHabitaciones):
+            vecinoIzq = None
+            vecinoDer = None
+            valorActual = None
+
+            if inDict(memoria, (piso, nHabitacion)):
+                valorActual = memoria[(piso, nHabitacion)]
+            if inDict(memoria, (piso, nHabitacion-1)):
+                vecinoIzq = memoria[(piso, nHabitacion-1)]
+            if inDict(memoria, (piso, nHabitacion+1)):
+                vecinoDer = memoria[(piso, nHabitacion+1)]
+
+            if valorActual is not None:
+                if vecinoIzq is not None:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion)] = min(vecinoIzq + gastoEnergia[piso], valorActual, vecinoDer + gastoEnergia[piso])
+                    else:
+                        memoria[(piso, nHabitacion)] = min(vecinoIzq + gastoEnergia[piso], valorActual)
+                else:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion)] = min(vecinoDer + gastoEnergia[piso], valorActual)
+                    else:
+                        memoria[(piso, nHabitacion)] = valorActual
+            else:
+                if vecinoIzq is not None:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion)] = min(vecinoIzq + gastoEnergia[piso], vecinoDer + gastoEnergia[piso])
+                    else:
+                        memoria[(piso, nHabitacion)] = vecinoIzq + gastoEnergia[piso]
+                else:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion)] = vecinoDer + gastoEnergia[piso]
+                    else:
+                        memoria[(piso, nHabitacion)] = None
+
+            if inDict(portales, (piso, nHabitacion)):
+                memoria[portales[(piso, nHabitacion)]] = memoria[(piso, nHabitacion)]
+
+            nHabitacion2 = nHabitaciones - nHabitacion - 1
+            vecinoIzq = None
+            vecinoDer = None
+            valorActual = None
+
+            if inDict(memoria, (piso, nHabitacion2)):
+                valorActual = memoria[(piso, nHabitacion2)]
+            if inDict(memoria, (piso, nHabitacion2-1)):
+                vecinoIzq = memoria[(piso, nHabitacion2-1)]
+            if inDict(memoria, (piso, nHabitacion2+1)):
+                vecinoDer = memoria[(piso, nHabitacion2+1)]
+
+            if valorActual is not None:
+                if vecinoIzq is not None:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion2)] = min(vecinoIzq + gastoEnergia[piso], valorActual, vecinoDer + gastoEnergia[piso])
+                    else:
+                        memoria[(piso, nHabitacion2)] = min(vecinoIzq + gastoEnergia[piso], valorActual)
+                else:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion2)] = min(vecinoDer + gastoEnergia[piso], valorActual)
+                    else:
+                        memoria[(piso, nHabitacion2)] = valorActual
+            else:
+                if vecinoIzq is not None:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion2)] = min(vecinoIzq + gastoEnergia[piso], vecinoDer + gastoEnergia[piso])
+                    else:
+                        memoria[(piso, nHabitacion2)] = vecinoIzq + gastoEnergia[piso]
+                else:
+                    if vecinoDer is not None:
+                        memoria[(piso, nHabitacion2)] = vecinoDer + gastoEnergia[piso]
+                    else:
+                        memoria[(piso, nHabitacion2)] = None
+
+            if inDict(portales, (piso, nHabitacion2)):
+                memoria[portales[(piso, nHabitacion2)]] = memoria[(piso, nHabitacion2)]
+    goal = (nPisos - 1, nHabitaciones - 1)
+    if inDict(memoria, goal):
+        if memoria[goal] is not None:
+            return memoria[goal]
+        else:
+            return "NO EXISTE"
+    else:
+        return "NO EXISTE"
+
 
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas):
