@@ -35,32 +35,26 @@ def lectura():
             # datos = file.readline().split(" ")
             datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
-            if inDict(pisosNoVisitados, int(datos[2])-1):
+            # if inDict(pisosNoVisitados, int(datos[2])-1):
+            if pisosNoVisitados.get(int(datos[2])-1, -1) != -1:
                 pisosNoVisitados.pop(int(datos[2])-1)
 
         entradas = list(portales.keys())
 
         # start = timer() # TODO: Quitar esto
-        if inDict(pisosNoVisitados, nPisos - 1):
+        # if inDict(pisosNoVisitados, nPisos - 1):
+        if pisosNoVisitados.get(nPisos - 1, -1) != -1:
             print("NO EXISTE")
         else:
             for i in entradas:
-                if inDict(pisosNoVisitados, i[0]):
+                # if inDict(pisosNoVisitados, i[0]):
+                if pisosNoVisitados.get(i[0], -1) != -1:
                     portales.pop(i)
             print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales))
 
         # elapsed_time = timer() - start # TODO: Quitar esto
         # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
-
-
-def inDict(dict, key) -> bool:
-    try:
-        dict[key]
-        return True
-    except KeyError:
-        return False
-
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     inicio = (0,0)
@@ -81,14 +75,16 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
         visitados[actual] = 0
 
         vecinos = []
-        if actual[1] > 0 and not inDict(visitados, (actual[0], actual[1]-1)):
+        # if actual[1] > 0 and not inDict(visitados, (actual[0], actual[1]-1)):
+        if actual[1] > 0 and visitados.get((actual[0], actual[1]-1), -1) == -1:
             vecinos.append((actual[0], actual[1] - 1))
 
-        if actual[1] < nHabitaciones and not inDict(visitados, (actual[0], actual[1]+1)):
+        # if actual[1] < nHabitaciones and not inDict(visitados, (actual[0], actual[1]+1)):
+        if actual[1] < nHabitaciones and visitados.get((actual[0], actual[1]+1), -1) == -1:
             vecinos.append((actual[0], actual[1] + 1))
 
-        # if index != -1 and not inDict(visitados, portales[actual]):
-        if inDict(portales, actual) and not inDict(visitados, portales[actual]):
+        # if inDict(portales, actual) and not inDict(visitados, portales[actual]):
+        if portales.get(actual, -1) != -1 and visitados.get(portales[actual], -1) == -1:
             vecinos.append(portales[actual])
 
         for vecino in vecinos:
@@ -97,14 +93,15 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
             else:
                 nuevoGasto = gastoEnergia[vecino[0]] + memoria[actual]
 
-            nuevo = not inDict(memoria, vecino)
-            if nuevo:
+            # if not inDict(memoria, vecino):
+            if memoria.get(vecino, -1) == -1:
                 memoria[vecino] = nuevoGasto
 
             viejoGasto = memoria[vecino]
             if nuevoGasto < viejoGasto:
                 memoria[vecino] = nuevoGasto
-            if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
+            # if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
+            if visitados.get(vecino, -1) == -1 and porVisitar.get(vecino, -1) == -1:
                 pq.put((nuevoGasto, vecino))
                 porVisitar[vecino] = 0
 
@@ -115,7 +112,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     goal = (nPisos - 1, nHabitaciones - 1)
 
     # print(j, "elementos visitados")
-    if not inDict(visitados, goal):
+    # if not inDict(visitados, goal):
+    if visitados.get(goal, -1) == -1:
         return "NO EXISTE"
     else:
         return memoria[(nPisos - 1,nHabitaciones - 1)]
