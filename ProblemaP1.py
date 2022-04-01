@@ -10,7 +10,7 @@ Autores:
 import sys
 from timeit import default_timer as timer
 from tracemalloc import start
-# from queue import PriorityQueue as PQ
+from queue import PriorityQueue as PQ
 
 def lectura():
 
