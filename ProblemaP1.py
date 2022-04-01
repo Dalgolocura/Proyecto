@@ -8,7 +8,7 @@ Autores:
 """
 
 from sys import stdin
-from timeit import default_timer as timer
+# from timeit import default_timer as timer
 import heapq as hq
 import multiprocessing as mp
 
@@ -47,12 +47,12 @@ def lectura():
         # print("Total de casos:", tCasos)
         # print("Casos por procesador:", casosPorProcesador)
         # print(len(casos[0]))
-        start = timer()
+        # start = timer()
         pool = mp.Pool(processes=nProcesadores)
         print("\n".join(pool.map(calcularMinEnergiaDijkstra, casos)).strip())
         # print(calcularMinEnergiaDijkstra(caso))
-        elapsed_time = timer() - start
-        print("Time: %.10f" % elapsed_time)
+        # elapsed_time = timer() - start
+        # print("Time: %.10f" % elapsed_time)
 
 def calcularMinEnergiaDijkstra(casos):
     # print(caso)
