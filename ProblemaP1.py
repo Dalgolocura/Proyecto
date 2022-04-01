@@ -7,17 +7,17 @@ Autores:
     William Mendez  - 202012662
 """
 
-from sys import stdin
+# from sys import stdin
 from timeit import default_timer as timer
 
 def lectura():
 
-    # file = open("1.in", "r")
+    # file = open("Proyecto/1.in", "r")
     # file = open("Proyecto/2.in", "r")
     file = open("Proyecto/P1_casesFP.in", "r")
 
     nCasos = int(file.readline())
-    nCasos = int(stdin.readline())
+    # nCasos = int(stdi0n.readline())
 
     while nCasos != 0:
         datos = file.readline().split(" ")
@@ -34,11 +34,15 @@ def lectura():
             # datos = stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
 
-        start = timer() # TODO: Quitar esto
-        print(calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales))
+        if 1001 - nCasos == 354:
+            print(nPisos, nHabitaciones, nPortales)
+
+        #TODO quitar pisos
+        # start = timer() # TODO: Quitar esto
+        # print(calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales), "-", nPisos*nHabitaciones)
         # print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, entradas))
-        elapsed_time = timer() - start # TODO: Quitar esto
-        print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
+        # elapsed_time = timer() - start # TODO: Quitar esto
+        # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
 def binarySearch(array, x, low, high):
@@ -100,7 +104,11 @@ def calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales):
                         memoria[(piso, nHabitacion)] = None
 
             if inDict(portales, (piso, nHabitacion)):
-                memoria[portales[(piso, nHabitacion)]] = memoria[(piso, nHabitacion)]
+                destino = portales[(piso, nHabitacion)]
+                try:
+                    memoria[destino] = min(memoria[(piso, nHabitacion)], memoria[destino])
+                except:
+                    memoria[destino] = memoria[(piso, nHabitacion)]
 
             nHabitacion2 = nHabitaciones - nHabitacion - 1
             vecinoIzq = None
@@ -138,7 +146,13 @@ def calcularMinEnergiaRecorrido(nPisos, nHabitaciones, gastoEnergia, portales):
                         memoria[(piso, nHabitacion2)] = None
 
             if inDict(portales, (piso, nHabitacion2)):
-                memoria[portales[(piso, nHabitacion2)]] = memoria[(piso, nHabitacion2)]
+                destino = portales[(piso, nHabitacion2)]
+                try:
+                    memoria[destino] = min(memoria[(piso, nHabitacion2)], memoria[destino])
+                except:
+                    memoria[destino] = memoria[(piso, nHabitacion2)]
+
+
     goal = (nPisos - 1, nHabitaciones - 1)
     if inDict(memoria, goal):
         if memoria[goal] is not None:
@@ -216,7 +230,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
 start = timer()
 lectura()
 elapsed_time = timer() - start
-print("Tiempo total: %.10f segundos." % elapsed_time)
+print("Time: %.10f segundos." % elapsed_time)
 
 
 # comando: python ProblemaP1.py <2.in> salida.out

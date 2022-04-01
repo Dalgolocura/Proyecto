@@ -1,0 +1,33 @@
+Casos mal:
+Caso 7: Nuestro 117903 Profe 69276 Diferencia: 48627
+Caso 139: Nuestro 8231 Profe 3398 Diferencia: 4833
+Caso 185: Nuestro 232022 Profe 208633 Diferencia: 23389
+Caso 232: Nuestro 41448 Profe 27263 Diferencia: 14185
+Caso 293: Nuestro 377837 Profe 352306 Diferencia: 25531
+Caso 294: Nuestro 372616 Profe 310947 Diferencia: 61669
+Caso 295: Nuestro 405342 Profe 291310 Diferencia: 114032
+Caso 296: Nuestro NO EXISTE Profe 5316
+Caso 348: Nuestro NO EXISTE Profe 86687
+Caso 354: Nuestro NO EXISTE Profe 2763
+Caso 367: Nuestro 918603 Profe 821174 Diferencia: 97429
+Caso 386: Nuestro 13097 Profe 3833 Diferencia: 9264
+Caso 428: Nuestro NO EXISTE Profe 1696
+Caso 440: Nuestro 76288 Profe 67703 Diferencia: 8585
+Caso 464: Nuestro 83547 Profe 62236 Diferencia: 21311
+Caso 465: Nuestro 169815 Profe 167809 Diferencia: 2006
+Caso 505: Nuestro 263957 Profe 148311 Diferencia: 115646
+Caso 519: Nuestro 309273 Profe 274242 Diferencia: 35031
+Caso 589: Nuestro NO EXISTE Profe 3178
+Caso 646: Nuestro NO EXISTE Profe 1569
+Caso 662: Nuestro 11546 Profe 5441 Diferencia: 6105
+Caso 823: Nuestro NO EXISTE Profe 43801
+Caso 838: Nuestro 192511 Profe 13697 Diferencia: 178814
+Caso 840: Nuestro NO EXISTE Profe 1215
+Caso 871: Nuestro 44981 Profe 13566 Diferencia: 31415
+Caso 874: Nuestro 7965 Profe 4315 Diferencia: 3650
+Caso 889: Nuestro NO EXISTE Profe 127792
+Caso 901: Nuestro NO EXISTE Profe 23218
+Caso 962: Nuestro NO EXISTE Profe 10133
+Caso 973: Nuestro 185279 Profe 146432 Diferencia: 38847
+Caso 1001: Nuestro Time: 593.2617747000 segundos. Profe Time:  5.366181373596191
+Casos diferentes:31
