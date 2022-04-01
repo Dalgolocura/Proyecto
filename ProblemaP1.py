@@ -128,3 +128,4 @@ print("Tiempo total: %.10f segundos." % elapsed_time)
 
 
 # comando: python ProblemaP1.py <2.in> salida.out
+# comando: python ProblemaP1.py <P1_casesFP.in> salida.out
