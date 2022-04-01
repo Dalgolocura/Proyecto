@@ -73,10 +73,10 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
 
             if memoria.get(vecino, -1) == -1:
                 memoria[vecino] = nuevoGasto
-
-            viejoGasto = memoria[vecino]
-            if nuevoGasto < viejoGasto:
-                memoria[vecino] = nuevoGasto
+            else:
+                viejoGasto = memoria[vecino]
+                if nuevoGasto < viejoGasto:
+                    memoria[vecino] = nuevoGasto
             if visitados.get(vecino, -1) == -1 and porVisitar.get(vecino, -1) == -1:
                 hq.heappush(pq,(nuevoGasto, vecino))
                 porVisitar[vecino] = 0
