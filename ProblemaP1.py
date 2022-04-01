@@ -7,12 +7,10 @@ Autores:
     William Mendez  - 202012662
 """
 
-import re
 from sys import stdin
 from timeit import default_timer as timer
 import heapq as hq
 import multiprocessing as mp
-from unittest import result
 
 def lectura():
     if __name__ == "__main__":
@@ -32,19 +30,18 @@ def lectura():
                 if pisosNoVisitados.get(int(datos[2])-1, -1) != -1:
                     pisosNoVisitados.pop(int(datos[2])-1)
 
-            # entradas = list(portales.keys())
 
-            # # start = timer() # TODO: Quitar esto
-            # for i in entradas:
-            #     if pisosNoVisitados.get(i[0], -1) != -1:
-            #         portales.pop(i)
+            entradas = list(portales.keys())
 
-            caso = (nPisos, nHabitaciones, gastoEnergia, portales)
-            casos[(tCasos - nCasos)//casosPorProcesador].append(caso)
+            # start = timer() # TODO: Quitar esto
+            for i in entradas:
+                if pisosNoVisitados.get(i[0], -1) != -1:
+                    portales.pop(i)
+
+            casos[(tCasos - nCasos)//casosPorProcesador].append((nPisos, nHabitaciones, gastoEnergia, portales))
             # elapsed_time = timer() - start # TODO: Quitar esto
             # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
             nCasos -= 1
-
 
         # print("Procesadores:", nProcesadores)
         # print("Total de casos:", tCasos)
@@ -55,7 +52,7 @@ def lectura():
         print("\n".join(pool.map(calcularMinEnergiaDijkstra, casos)).strip())
         # print(calcularMinEnergiaDijkstra(caso))
         elapsed_time = timer() - start
-        print("Time: %.10f segundos." % elapsed_time)
+        print("Time: %.10f" % elapsed_time)
 
 def calcularMinEnergiaDijkstra(casos):
     # print(caso)
@@ -73,43 +70,32 @@ def calcularMinEnergiaDijkstra(casos):
                 (dist, actual) = hq.heappop(pq)
                 porVisitar.pop(actual)
 
-                # print(actual, dist)
-                visitados[actual] = 0
+                visitados[actual], vecinos = 0, []
 
-                vecinos = []
-                # if actual[1] > 0 and not inDict(visitados, (actual[0], actual[1]-1)):
                 if actual[1] > 0 and visitados.get((actual[0], actual[1]-1), -1) == -1:
                     vecinos.append((actual[0], actual[1] - 1))
 
-                # if actual[1] < nHabitaciones and not inDict(visitados, (actual[0], actual[1]+1)):
                 if actual[1] < nHabitaciones and visitados.get((actual[0], actual[1]+1), -1) == -1:
                     vecinos.append((actual[0], actual[1] + 1))
 
-                # if inDict(portales, actual) and not inDict(visitados, portales[actual]):
                 if portales.get(actual, -1) != -1 and visitados.get(portales[actual], -1) == -1:
                     vecinos.append(portales[actual])
 
                 for vecino in vecinos:
-                    if vecino[0] > actual[0]:
-                        nuevoGasto = memoria[actual]
-                    else:
-                        nuevoGasto = gastoEnergia[vecino[0]] + memoria[actual]
+                    nuevoGasto = memoria[actual] if vecino[0] > actual[0] else gastoEnergia[vecino[0]] + memoria[actual]
 
-                    # if not inDict(memoria, vecino):
                     if memoria.get(vecino, -1) == -1:
                         memoria[vecino] = nuevoGasto
 
                     viejoGasto = memoria[vecino]
                     if nuevoGasto < viejoGasto:
                         memoria[vecino] = nuevoGasto
-                    # if not inDict(visitados, vecino) and not inDict(porVisitar, vecino):
+
                     if visitados.get(vecino, -1) == -1 and porVisitar.get(vecino, -1) == -1:
                         hq.heappush(pq,(nuevoGasto, vecino))
                         porVisitar[vecino] = 0
 
-            goal = (nPisos - 1, nHabitaciones - 1)
-
-            if visitados.get(goal, -1) == -1:
+            if visitados.get((nPisos - 1, nHabitaciones - 1), -1) == -1:
                 resultados.append("NO EXISTE")
             else:
                 resultados.append(str(memoria[(nPisos - 1,nHabitaciones - 1)]))
