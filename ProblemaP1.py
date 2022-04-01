@@ -124,7 +124,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
 start = timer()
 lectura()
 elapsed_time = timer() - start
-print("Tiempo total: %.10f segundos." % elapsed_time)
+print("Time: %.10f segundos." % elapsed_time)
 
 
 # comando: python ProblemaP1.py <2.in> salida.out
