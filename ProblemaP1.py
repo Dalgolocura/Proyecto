@@ -71,10 +71,9 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales, en
     memoria = {}
     memoria[inicio] = 0
     visitados = {}
-    porVisitar = [inicio]
+    porVisitar = {inicio: 0}
 
     # j = 0
-
     pq = PQ()
     pq.put((0,inicio))
 
