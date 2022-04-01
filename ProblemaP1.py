@@ -29,7 +29,6 @@ def lectura():
 
         entradas = list(portales.keys())
 
-        # start = timer() # TODO: Quitar esto
         if pisosNoVisitados.get(nPisos - 1, -1) != -1:
             print("NO EXISTE")
         else:
@@ -37,9 +36,6 @@ def lectura():
                 if pisosNoVisitados.get(i[0], -1) != -1:
                     portales.pop(i)
             print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales))
-
-        # elapsed_time = timer() - start # TODO: Quitar esto
-        # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
@@ -88,12 +84,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     else:
         return memoria[(nPisos - 1,nHabitaciones - 1)]
 
-
-
-start = timer()
 lectura()
-elapsed_time = timer() - start
-print("Time: %.10f segundos." % elapsed_time)
 
 
 # comando: python ProblemaP1.py <2.in> salida.out
