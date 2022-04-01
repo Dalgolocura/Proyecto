@@ -23,13 +23,10 @@ def lectura():
     while nCasos != 0:
         # datos = file.readline().split(" ")
         datos = stdin.readline().split(" ")
-        nPisos = int(datos[0])
-        nHabitaciones = int(datos[1])
-        nPortales = int(datos[2])
+        nPisos, nHabitaciones, nPortales = int(datos[0]), int(datos[1]), int(datos[2])
         # gastoEnergia = [int(x) for x in file.readline().split(" ")]
         gastoEnergia = [int(x) for x in stdin.readline().split(" ")]
-        portales = {}
-        pisosNoVisitados = {x: 0 for x in range(1,nPisos)}
+        portales, pisosNoVisitados = {}, {x: 0 for x in range(1,nPisos)}
 
         for i in range(nPortales):
             # datos = file.readline().split(" ")
@@ -58,14 +55,9 @@ def lectura():
 
 def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
     inicio = (0,0)
-    memoria = {}
-    memoria[inicio] = 0
-    visitados = {}
-    porVisitar = {inicio: 0}
+    memoria, visitados, porVisitar = {inicio: 0}, {}, {inicio: 0}
 
-    # j = 0
-    pq = []
-    entry = (0, inicio)
+    pq, entry = [], (0, inicio)
     hq.heappush(pq,entry)
 
     while len(pq)>0:
@@ -106,14 +98,8 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
                 hq.heappush(pq,(nuevoGasto, vecino))
                 porVisitar[vecino] = 0
 
-        # j += 1
-        # if j % 10000 == 0:
-            # print(j, "elementos visitados")
-
     goal = (nPisos - 1, nHabitaciones - 1)
 
-    # print(j, "elementos visitados")
-    # if not inDict(visitados, goal):
     if visitados.get(goal, -1) == -1:
         return "NO EXISTE"
     else:
