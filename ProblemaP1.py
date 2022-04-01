@@ -9,14 +9,13 @@ Autores:
 
 import sys
 from timeit import default_timer as timer
-from tracemalloc import start
 from queue import PriorityQueue as PQ
 
 def lectura():
 
     # file = open("1.in", "r")
     # file = open("2.in", "r")
-    # file = open("P1_casesFP.in", "r")
+    # file = open("Proyecto/P1_casesFP.in", "r")
 
     # nCasos = int(file.readline())
     nCasos = int(sys.stdin.readline())
@@ -30,29 +29,30 @@ def lectura():
         # gastoEnergia = [int(x) for x in file.readline().split(" ")]
         gastoEnergia = [int(x) for x in sys.stdin.readline().split(" ")]
         portales = {}
+        pisosNoVisitados = {x: 0 for x in range(1,nPisos)}
 
         for i in range(nPortales):
             # datos = file.readline().split(" ")
             datos = sys.stdin.readline().split(" ")
             portales[(int(datos[0])-1, int(datos[1])-1)] = (int(datos[2])-1, int(datos[3])-1)
+            if inDict(pisosNoVisitados, int(datos[2])-1):
+                pisosNoVisitados.pop(int(datos[2])-1)
+
+        entradas = list(portales.keys())
 
         # start = timer() # TODO: Quitar esto
-        print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales))
+        if inDict(pisosNoVisitados, nPisos - 1):
+            print("NO EXISTE")
+        else:
+            for i in entradas:
+                if inDict(pisosNoVisitados, i[0]):
+                    portales.pop(i)
+            print(calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales))
+
         # elapsed_time = timer() - start # TODO: Quitar esto
         # print("Caso:", 1001 - nCasos,"tamaño de la torre",nPisos,"x",nHabitaciones, "Tiempo:", elapsed_time) # TODO: Quitar esto
         nCasos -= 1
 
-def binarySearch(array, x, low, high):
-    high -= 1
-    while low <= high:
-        mid = low + (high - low)//2
-        if array[mid] == x:
-            return mid
-        elif array[mid] < x:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
 
 def inDict(dict, key) -> bool:
     try:
@@ -87,6 +87,7 @@ def calcularMinEnergiaDijkstra(nPisos, nHabitaciones, gastoEnergia, portales):
         if actual[1] < nHabitaciones and not inDict(visitados, (actual[0], actual[1]+1)):
             vecinos.append((actual[0], actual[1] + 1))
 
+        # if index != -1 and not inDict(visitados, portales[actual]):
         if inDict(portales, actual) and not inDict(visitados, portales[actual]):
             vecinos.append(portales[actual])
 
@@ -128,4 +129,3 @@ print("Time: %.10f segundos." % elapsed_time)
 
 
 # comando: python ProblemaP1.py <2.in> salida.out
-# comando: python ProblemaP1.py <P1_casesFP.in> salida.out
